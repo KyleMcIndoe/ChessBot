@@ -1,4 +1,4 @@
-import { Chess } from "chess.js";
+import { BLACK, Chess, WHITE } from "chess.js";
 
 export abstract class funcs {
 
@@ -35,6 +35,16 @@ export abstract class funcs {
             if(x.get("d5").color == 'b') bEval -= 5;
             if(x.get("d5").color == 'w') bEval += 5;
         } 
+
+        bEval += this.materialBalance(x) * 2;
+
+        const bCastle = x.getCastlingRights(BLACK);
+        const wCastle = x.getCastlingRights(WHITE);
+
+        if(bCastle.q) bEval -2;
+        if(bCastle.k) bEval -3;
+        if(wCastle.q) bEval +2;
+        if(wCastle.k) bEval +3;
 
         return bEval;
 
@@ -88,6 +98,34 @@ export abstract class funcs {
             }
         }
         return maxdex;
+    }
+
+    public static materialBalance(b: Chess) {
+        const barr = b.board();
+        let blackMaterial: number = 0;
+        let whiteMaterial: number = 0;
+        for(let i = 0; i < barr.length; i++) {
+            for(let j = 0; j < barr[i].length; j++) {
+                if(barr[i][j] != null) {
+                    if(barr[i][j]?.color == 'w') {
+                        if(barr[i][j]?.type == 'p') whiteMaterial += 1;
+                        if(barr[i][j]?.type == 'b') whiteMaterial += 3;
+                        if(barr[i][j]?.type == 'n') whiteMaterial += 3;
+                        if(barr[i][j]?.type == 'r') whiteMaterial += 5;
+                        if(barr[i][j]?.type == 'q') whiteMaterial += 9;
+                    } else {
+                        if(barr[i][j]?.type == 'p') blackMaterial += 1;
+                        if(barr[i][j]?.type == 'b') blackMaterial += 3;
+                        if(barr[i][j]?.type == 'n') blackMaterial += 3;
+                        if(barr[i][j]?.type == 'r') blackMaterial += 5;
+                        if(barr[i][j]?.type == 'q') blackMaterial += 9;
+                    }
+
+                }
+            } 
+        }
+
+        return whiteMaterial - blackMaterial;
     }
 
 }
