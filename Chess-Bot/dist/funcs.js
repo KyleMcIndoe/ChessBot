@@ -15,6 +15,30 @@ class funcs {
         let whiteScore = 0;
         let blackScore = 0;
         let bEval = 0;
+        if (x.get("e4") != null) {
+            if (x.get("e4").color == 'b')
+                bEval -= 5;
+            if (x.get("e4").color == 'w')
+                bEval += 5;
+        }
+        if (x.get("d4") != null) {
+            if (x.get("d4").color == 'b')
+                bEval -= 5;
+            if (x.get("d4").color == 'w')
+                bEval += 5;
+        }
+        if (x.get("e5") != null) {
+            if (x.get("e5").color == 'b')
+                bEval -= 5;
+            if (x.get("e5").color == 'w')
+                bEval += 5;
+        }
+        if (x.get("d5") != null) {
+            if (x.get("d5").color == 'b')
+                bEval -= 5;
+            if (x.get("d5").color == 'w')
+                bEval += 5;
+        }
         return bEval;
     }
     static cloneB(x) {
