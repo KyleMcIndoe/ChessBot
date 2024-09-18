@@ -1,9 +1,15 @@
 import {funcs} from './funcs';
 import {Chess} from 'chess.js';
+import {bm} from './bm';
+import PromptSync, * as promptSync from 'prompt-sync'; 
 
-const c = new Chess();
-const b = funcs.cloneB(c);
-var m = c.moves();
-b.move("e4");
-console.log(b.ascii());
-console.log(c.ascii());
+const prompt = PromptSync();
+
+console.log("afef")
+var name = prompt("name:")
+console.log(name)
+//const b = new Chess();
+
+
+
+

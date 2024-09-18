@@ -15,7 +15,8 @@
             "program": "${workspaceFolder}\\Chess-Bot\\dist\\index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            "console" : "integratedTerminal"
         }
     ]
 }
