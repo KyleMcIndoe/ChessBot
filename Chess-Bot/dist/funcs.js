@@ -4,6 +4,14 @@ exports.funcs = void 0;
 const chess_js_1 = require("chess.js");
 class funcs {
     static eval(x) {
+        if (x.isCheckmate() && x.turn() == 'w') {
+            return -100000;
+        }
+        if (x.isCheckmate() && x.turn() == 'b') {
+            return 100000;
+        }
+        if (x.isDraw())
+            return 0;
         let whiteScore = 0;
         let blackScore = 0;
         let bEval = 0;

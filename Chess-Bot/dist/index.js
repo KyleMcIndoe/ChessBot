@@ -9,7 +9,7 @@ const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const prompt = (0, prompt_sync_1.default)();
 const b = new chess_js_1.Chess();
 const playerSide = prompt("User side: ");
-const depth = parseInt(prompt("Depth"));
+const depth = parseInt(prompt("Depth: "));
 if (playerSide == 'w' || playerSide == 'White' || playerSide == 'white') {
     console.log(b.ascii());
     var firstMove = prompt("First move: ");
@@ -17,6 +17,7 @@ if (playerSide == 'w' || playerSide == 'White' || playerSide == 'white') {
 }
 while (b.isGameOver() == false) {
     var computerBm = bm_1.bm.findBest(b, depth);
+    console.log(computerBm);
     b.move(computerBm);
     console.log(b.ascii());
     var userMove = prompt("Your move: ");

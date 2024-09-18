@@ -3,12 +3,26 @@ import { Chess } from "chess.js";
 export abstract class funcs {
 
     public static eval(x: Chess) {
+
+        if(x.isCheckmate() && x.turn() == 'w') {
+            return -100000;
+        }
+
+        if(x.isCheckmate() && x.turn() == 'b') {
+            return 100000;
+        }
+
+        if(x.isDraw()) return 0;
+
         let whiteScore: number = 0;
         let blackScore: number = 0;
+
+        
 
         let bEval: number = 0;
 
         return bEval;
+
     }
     
     public static cloneB(x: Chess) { // clone board
