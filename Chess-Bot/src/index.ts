@@ -31,6 +31,13 @@ while(b.isGameOver() == false) {
     console.log(b.ascii());
 }
 
+if(b.isCheckmate()) {
+    let side = b.turn();
+    console.log(side + " has been mated");
+} else {
+    console.log("Draw");
+}
+
 
 
 

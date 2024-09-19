@@ -130,9 +130,7 @@ export abstract class funcs {
 
     public static timeDiff(a: Date, b: Date) {
         let x: number = 0;
-        let secs = b.getSeconds() - a.getSeconds();
-        x += secs * 1000;
-        x += b.getMilliseconds();
+        x += b.getMilliseconds() - a.getMilliseconds();
         return x;
     }
 }

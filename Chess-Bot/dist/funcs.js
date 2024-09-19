@@ -135,9 +135,7 @@ class funcs {
     }
     static timeDiff(a, b) {
         let x = 0;
-        let secs = b.getSeconds() - a.getSeconds();
-        x += secs * 1000;
-        x += b.getMilliseconds();
+        x += b.getMilliseconds() - a.getMilliseconds();
         return x;
     }
 }
