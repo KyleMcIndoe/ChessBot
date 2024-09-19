@@ -20,7 +20,7 @@ class node {
         this.evals = [];
         this.children = [];
         this.evalsOptimal = 0;
-        this.curb = funcs_1.funcs.cloneB(prevB);
+        this.curb = prevB;
         this.curb.move(move);
         this.turn = this.curb.turn();
         this.pMoves = this.curb.moves().sort().reverse();
@@ -55,6 +55,7 @@ class node {
             }
             this.nodeEval = this.pickEval();
         }
+        this.curb.undo();
     }
 }
 class bm {

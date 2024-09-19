@@ -26,7 +26,7 @@ class node {
     }
 
     constructor(prevB: Chess,move: string, depth: number, maxDepth: number, parent?: node) {
-        this.curb = funcs.cloneB(prevB);
+        this.curb = prevB;
         this.curb.move(move);
         this.turn = this.curb.turn();
         this.pMoves = this.curb.moves().sort().reverse();
@@ -66,6 +66,7 @@ class node {
             this.nodeEval = this.pickEval()
         }
         
+        this.curb.undo();
     }
 }
 
