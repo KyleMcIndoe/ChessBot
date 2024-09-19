@@ -18,9 +18,12 @@ if(playerSide == 'w' || playerSide == 'White' || playerSide == 'white') {
 }
 
 while(b.isGameOver() == false) {
+    var dateOne = new Date();
     var computerBm = bm.findBest(b, depth);
     console.log(computerBm);
     b.move(computerBm);
+    var dateTwo = new Date();
+    console.log(funcs.timeDiff(dateOne, dateTwo) + " ms");
     console.log(b.ascii());
 
     var userMove = prompt("Your move: ");

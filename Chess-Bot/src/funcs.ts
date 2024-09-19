@@ -128,4 +128,11 @@ export abstract class funcs {
         return whiteMaterial - blackMaterial;
     }
 
+    public static timeDiff(a: Date, b: Date) {
+        let x: number = 0;
+        let secs = b.getSeconds() - a.getSeconds();
+        x += secs * 1000;
+        x += b.getMilliseconds();
+        return x;
+    }
 }

@@ -133,6 +133,13 @@ class funcs {
         }
         return whiteMaterial - blackMaterial;
     }
+    static timeDiff(a, b) {
+        let x = 0;
+        let secs = b.getSeconds() - a.getSeconds();
+        x += secs * 1000;
+        x += b.getMilliseconds();
+        return x;
+    }
 }
 exports.funcs = funcs;
 //# sourceMappingURL=funcs.js.map
