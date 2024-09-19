@@ -3,6 +3,8 @@ import {funcs} from './funcs'
 
 export var searches: number = 0;
 
+var dic = new Map<Chess, number[]>();
+
 class node {
     public curb: Chess;
     public turn: Color;
@@ -39,10 +41,15 @@ class node {
         } else {
             for(let i = 0; i < this.pMoves.length; i++) {
 
-                this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this))
-                this.evals.push(this.children[i].nodeEval);
+                if(dic.has(this.curb) != true) {
+                    this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this))
+                    this.evals.push(this.children[i].nodeEval);
+                } else {
+                    let arr = dic.get(this.curb) ?? [];
+                    this.evals.push(arr[i] ?? 0)
+                }
 
-                let latestEval = this.children[i].nodeEval;
+                let latestEval = this.evals[this.evals.length - 1];
 
                 if(this.turn == 'w' && latestEval > this.evalsOptimal) this.evalsOptimal = latestEval;
                 if(this.turn == 'b' && latestEval < this.evalsOptimal) this.evalsOptimal = latestEval;

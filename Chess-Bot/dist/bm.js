@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.bm = exports.searches = void 0;
 const funcs_1 = require("./funcs");
 exports.searches = 0;
+var dic = new Map();
 class node {
     pickEval() {
         let ceval = 0;
@@ -15,6 +16,7 @@ class node {
         return ceval;
     }
     constructor(prevB, move, depth, maxDepth, parent) {
+        var _a, _b;
         this.evals = [];
         this.children = [];
         this.evalsOptimal = 0;
@@ -29,9 +31,15 @@ class node {
         }
         else {
             for (let i = 0; i < this.pMoves.length; i++) {
-                this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this));
-                this.evals.push(this.children[i].nodeEval);
-                let latestEval = this.children[i].nodeEval;
+                if (dic.has(this.curb) != true) {
+                    this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this));
+                    this.evals.push(this.children[i].nodeEval);
+                }
+                else {
+                    let arr = (_a = dic.get(this.curb)) !== null && _a !== void 0 ? _a : [];
+                    this.evals.push((_b = arr[i]) !== null && _b !== void 0 ? _b : 0);
+                }
+                let latestEval = this.evals[this.evals.length - 1];
                 if (this.turn == 'w' && latestEval > this.evalsOptimal)
                     this.evalsOptimal = latestEval;
                 if (this.turn == 'b' && latestEval < this.evalsOptimal)
