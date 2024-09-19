@@ -19,21 +19,23 @@ export abstract class funcs {
 
         let bEval: number = 0;
 
+        var centerControlVal = 2;
+
         if(x.get("e4") != null) {
-            if(x.get("e4").color == 'b') bEval -= 5;
-            if(x.get("e4").color == 'w') bEval += 5;
+            if(x.get("e4").color == 'b') bEval -= centerControlVal;
+            if(x.get("e4").color == 'w') bEval += centerControlVal;
         }
         if(x.get("d4") != null) {
-            if(x.get("d4").color == 'b') bEval -= 5;
-            if(x.get("d4").color == 'w') bEval += 5;
+            if(x.get("d4").color == 'b') bEval -= centerControlVal;
+            if(x.get("d4").color == 'w') bEval += centerControlVal;
         }
         if(x.get("e5") != null) {
-            if(x.get("e5").color == 'b') bEval -= 5;
-            if(x.get("e5").color == 'w') bEval += 5;
+            if(x.get("e5").color == 'b') bEval -= centerControlVal;
+            if(x.get("e5").color == 'w') bEval += centerControlVal;
         }
         if(x.get("d5") != null) {
-            if(x.get("d5").color == 'b') bEval -= 5;
-            if(x.get("d5").color == 'w') bEval += 5;
+            if(x.get("d5").color == 'b') bEval -= centerControlVal;
+            if(x.get("d5").color == 'w') bEval += centerControlVal;
         } 
 
         bEval += this.materialBalance(x) * 2;
