@@ -17,6 +17,7 @@
                 "${workspaceFolder}/**/*.js"
             ],
             "console" : "integratedTerminal"
+            
         }
     ]
 }

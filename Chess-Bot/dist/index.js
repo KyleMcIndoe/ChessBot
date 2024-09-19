@@ -14,6 +14,7 @@ if (playerSide == 'w' || playerSide == 'White' || playerSide == 'white') {
     console.log(b.ascii());
     var firstMove = prompt("First move: ");
     b.move(firstMove);
+    console.log(b.ascii());
 }
 while (b.isGameOver() == false) {
     var computerBm = bm_1.bm.findBest(b, depth);
