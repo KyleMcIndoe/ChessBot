@@ -1,8 +1,11 @@
 import { BLACK, Chess, WHITE } from "chess.js";
+import { PHMap } from "./piecePositionMap";
+
 
 export abstract class funcs {
 
     public static eval(x: Chess) {
+
 
         if(x.isCheckmate() && x.turn() == 'w') {
             return -100000;
@@ -14,31 +17,74 @@ export abstract class funcs {
 
         if(x.isDraw()) return 0;
 
+        let bEval: number = 0;
+
         let whiteScore: number = 0;
         let blackScore: number = 0;
 
-        let bEval: number = 0;
+        var arr = x.board();
+        for(let i = 0; i < arr.length; i++) { // nasty bit of code, rewards pieces when they are in certain positions(ex: pawns in centre)
+            for(let j = 0; j < arr[i].length; j++) {
+                if(arr[i][j] != null) {
+                    let cur = arr[i][j];
+                    let curColor = cur?.color;
+                    let curSquare = cur?.square;
+                    let curType = cur?.type;
+                    let s = "";
+                    s += curSquare;
+                    s += curColor;
+                    let posValC = PHMap.get(s);
+                    if(posValC != null) {
+                        if(curType == 'p' && curColor == 'b') {
+                            blackScore += posValC.p;
+                        }
+                        if(curType == 'b' && curColor == 'b') {
+                            blackScore += posValC.b;
+                        }
+                        if(curType == 'n' && curColor == 'b') {
+                            blackScore += posValC.n;
+                        }
+                        if(curType == 'r' && curColor == 'b') {
+                            blackScore += posValC.r;
+                        }
+                        if(curType == 'q' && curColor == 'b') {
+                            blackScore += posValC.q;
+                        }
+                        if(curType == 'k' && curColor == 'b') {
+                            blackScore += posValC.k;
+                        }
 
-        var centerControlVal = 2;
 
-        if(x.get("e4") != null) {
-            if(x.get("e4").color == 'b') bEval -= centerControlVal;
-            if(x.get("e4").color == 'w') bEval += centerControlVal;
-        }
-        if(x.get("d4") != null) {
-            if(x.get("d4").color == 'b') bEval -= centerControlVal;
-            if(x.get("d4").color == 'w') bEval += centerControlVal;
-        }
-        if(x.get("e5") != null) {
-            if(x.get("e5").color == 'b') bEval -= centerControlVal;
-            if(x.get("e5").color == 'w') bEval += centerControlVal;
-        }
-        if(x.get("d5") != null) {
-            if(x.get("d5").color == 'b') bEval -= centerControlVal;
-            if(x.get("d5").color == 'w') bEval += centerControlVal;
-        } 
 
-        bEval += this.materialBalance(x) * 2;
+                        if(curType == 'p' && curColor == 'w') {
+                            whiteScore += posValC.p;
+                        }
+                        if(curType == 'b' && curColor == 'w') {
+                            whiteScore += posValC.b;
+                        }
+                        if(curType == 'n' && curColor == 'w') {
+                            whiteScore += posValC.n;
+                        }
+                        if(curType == 'r' && curColor == 'w') {
+                            whiteScore += posValC.r;
+                        }
+                        if(curType == 'q' && curColor == 'w') {
+                            whiteScore += posValC.q;
+                        }
+                        if(curType == 'k' && curColor == 'w') {
+                            whiteScore += posValC.k;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        bEval += whiteScore;
+        bEval -= blackScore;
+
+        var pieceValueMultiplier = 2;
+        bEval += this.materialBalance(x) * pieceValueMultiplier;
 
         const bCastle = x.getCastlingRights(BLACK);
         const wCastle = x.getCastlingRights(WHITE);

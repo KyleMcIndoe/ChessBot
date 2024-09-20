@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.funcs = void 0;
 const chess_js_1 = require("chess.js");
+const piecePositionMap_1 = require("./piecePositionMap");
 class funcs {
     static eval(x) {
         if (x.isCheckmate() && x.turn() == 'w') {
@@ -12,34 +13,66 @@ class funcs {
         }
         if (x.isDraw())
             return 0;
+        let bEval = 0;
         let whiteScore = 0;
         let blackScore = 0;
-        let bEval = 0;
-        if (x.get("e4") != null) {
-            if (x.get("e4").color == 'b')
-                bEval -= 5;
-            if (x.get("e4").color == 'w')
-                bEval += 5;
+        var arr = x.board();
+        for (let i = 0; i < arr.length; i++) { // nasty bit of code
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] != null) {
+                    let cur = arr[i][j];
+                    let curColor = cur === null || cur === void 0 ? void 0 : cur.color;
+                    let curSquare = cur === null || cur === void 0 ? void 0 : cur.square;
+                    let curType = cur === null || cur === void 0 ? void 0 : cur.type;
+                    let s = "";
+                    s += curSquare;
+                    s += curColor;
+                    let posValC = piecePositionMap_1.PHMap.get(s);
+                    if (posValC != null) {
+                        if (curType == 'p' && curColor == 'b') {
+                            blackScore += posValC.p;
+                        }
+                        if (curType == 'b' && curColor == 'b') {
+                            blackScore += posValC.b;
+                        }
+                        if (curType == 'n' && curColor == 'b') {
+                            blackScore += posValC.n;
+                        }
+                        if (curType == 'r' && curColor == 'b') {
+                            blackScore += posValC.r;
+                        }
+                        if (curType == 'q' && curColor == 'b') {
+                            blackScore += posValC.q;
+                        }
+                        if (curType == 'k' && curColor == 'b') {
+                            blackScore += posValC.k;
+                        }
+                        if (curType == 'p' && curColor == 'w') {
+                            whiteScore += posValC.p;
+                        }
+                        if (curType == 'b' && curColor == 'w') {
+                            whiteScore += posValC.b;
+                        }
+                        if (curType == 'n' && curColor == 'w') {
+                            whiteScore += posValC.n;
+                        }
+                        if (curType == 'r' && curColor == 'w') {
+                            whiteScore += posValC.r;
+                        }
+                        if (curType == 'q' && curColor == 'w') {
+                            whiteScore += posValC.q;
+                        }
+                        if (curType == 'k' && curColor == 'w') {
+                            whiteScore += posValC.k;
+                        }
+                    }
+                }
+            }
         }
-        if (x.get("d4") != null) {
-            if (x.get("d4").color == 'b')
-                bEval -= 5;
-            if (x.get("d4").color == 'w')
-                bEval += 5;
-        }
-        if (x.get("e5") != null) {
-            if (x.get("e5").color == 'b')
-                bEval -= 5;
-            if (x.get("e5").color == 'w')
-                bEval += 5;
-        }
-        if (x.get("d5") != null) {
-            if (x.get("d5").color == 'b')
-                bEval -= 5;
-            if (x.get("d5").color == 'w')
-                bEval += 5;
-        }
-        bEval += this.materialBalance(x) * 2;
+        bEval += whiteScore;
+        bEval -= blackScore;
+        var pieceValueMultiplier = 2;
+        bEval += this.materialBalance(x) * pieceValueMultiplier;
         const bCastle = x.getCastlingRights(chess_js_1.BLACK);
         const wCastle = x.getCastlingRights(chess_js_1.WHITE);
         if (bCastle.q)
