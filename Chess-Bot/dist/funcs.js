@@ -17,7 +17,7 @@ class funcs {
         let whiteScore = 0;
         let blackScore = 0;
         var arr = x.board();
-        for (let i = 0; i < arr.length; i++) { // nasty bit of code
+        for (let i = 0; i < arr.length; i++) { // nasty bit of code, rewards pieces when they are in certain positions(ex: pawns in centre)
             for (let j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] != null) {
                     let cur = arr[i][j];
