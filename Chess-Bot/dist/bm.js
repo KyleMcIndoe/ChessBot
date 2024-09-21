@@ -33,7 +33,7 @@ class node {
             for (let i = 0; i < this.pMoves.length; i++) {
                 if (dic.has(this.curb) != true) {
                     this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this));
-                    this.evals.push(this.children[i].nodeEval);
+                    this.evals.push(this.children[i].evalsOptimal);
                 }
                 else {
                     let arr = (_a = dic.get(this.curb)) !== null && _a !== void 0 ? _a : [];
@@ -54,6 +54,7 @@ class node {
                 }
             }
             this.nodeEval = this.pickEval();
+            this.evalsOptimal = this.nodeEval;
         }
         this.curb.undo();
     }
@@ -75,7 +76,7 @@ class bm {
         else {
             bestMove = pMoves[funcs_1.funcs.findMindex(pMovesEvals)];
         }
-        console.log("Nodes searched: " + exports.searches);
+        console.log("Positions searched: " + exports.searches);
         return bestMove;
     }
 }
