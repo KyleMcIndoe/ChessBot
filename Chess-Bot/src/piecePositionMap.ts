@@ -61,12 +61,12 @@ PHMap.set("g4w", new posVals(0.3, 1, 1, 1, 1, 1));
 PHMap.set("h4w", new posVals(0.3, 1, 1, 1, 1, 1));
 
 PHMap.set("a5w", new posVals(0.4, 1, 1, 1, 1, 1));
-PHMap.set("b5w", new posVals(0.4, 1, 1, 1, 1, 1));
+PHMap.set("b5w", new posVals(0.4, 1.5, 1, 1, 1, 1));
 PHMap.set("c5w", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("d5w", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("e5w", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("f5w", new posVals(0.4, 1, 1, 1, 1, 1));
-PHMap.set("g5w", new posVals(0.4, 1, 1, 1, 1, 1));
+PHMap.set("g5w", new posVals(0.4, 1.5, 1, 1, 1, 1));
 PHMap.set("h5w", new posVals(0.4, 1, 1, 1, 1, 1));
 
 PHMap.set("a6w", new posVals(0.5, 1, 1, 1, 1, 1));
@@ -80,10 +80,10 @@ PHMap.set("h6w", new posVals(0.5, 1, 1, 1, 1, 1));
 
 PHMap.set("a7w", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("b7w", new posVals(0.6, 1, 1, 1, 1, 1));
-PHMap.set("c7w", new posVals(0.6, 1, 1, 1, 1, 1));
+PHMap.set("c7w", new posVals(0.6, 2, 1, 1, 1, 1));
 PHMap.set("d7w", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("e7w", new posVals(0.6, 1, 1, 1, 1, 1));
-PHMap.set("f7w", new posVals(0.6, 1, 1, 1, 1, 1));
+PHMap.set("f7w", new posVals(0.6, 2, 1, 1, 1, 1));
 PHMap.set("g7w", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("h7w", new posVals(0.6, 1, 1, 1, 1, 1));
 
@@ -111,10 +111,10 @@ PHMap.set("h1b", new posVals(0.7, 1, 1, 1, 1, 1));
 
 PHMap.set("a2b", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("b2b", new posVals(0.6, 1, 1, 1, 1, 1));
-PHMap.set("c2b", new posVals(0.6, 1, 1, 1, 1, 1));
+PHMap.set("c2b", new posVals(0.6, 2, 1, 1, 1, 1));
 PHMap.set("d2b", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("e2b", new posVals(0.6, 1, 1, 1, 1, 1));
-PHMap.set("f2b", new posVals(0.6, 1, 1, 1, 1, 1));
+PHMap.set("f2b", new posVals(0.6, 2, 1, 1, 1, 1));
 PHMap.set("g2b", new posVals(0.6, 1, 1, 1, 1, 1));
 PHMap.set("h2b", new posVals(0.6, 1, 1, 1, 1, 1));
 
@@ -128,12 +128,12 @@ PHMap.set("g3b", new posVals(0.5, 1, 1, 1, 1, 1));
 PHMap.set("h3b", new posVals(0.5, 1, 1, 1, 1, 1));
 
 PHMap.set("a4b", new posVals(0.4, 1, 1, 1, 1, 1));
-PHMap.set("b4b", new posVals(0.4, 1, 1, 1, 1, 1));
+PHMap.set("b4b", new posVals(0.4, 1.5, 1, 1, 1, 1));
 PHMap.set("c4b", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("d4b", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("e4b", new posVals(0.4, 1, 1, 1, 1, 1));
 PHMap.set("f4b", new posVals(0.4, 1, 1, 1, 1, 1));
-PHMap.set("g4b", new posVals(0.4, 1, 1, 1, 1, 1));
+PHMap.set("g4b", new posVals(0.4, 1.5, 1, 1, 1, 1));
 PHMap.set("h4b", new posVals(0.4, 1, 1, 1, 1, 1));
 
 PHMap.set("a5b", new posVals(0.3, 1, 1, 1, 1, 1));
