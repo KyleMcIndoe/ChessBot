@@ -11,7 +11,7 @@ const prompt = (0, prompt_sync_1.default)();
 const b = new chess_js_1.Chess();
 const playerSide = prompt("User side: ");
 const depth = parseInt(prompt("Depth: "));
-if (playerSide == 'w' || playerSide == 'White' || playerSide == 'white') {
+if (playerSide == 'w' || playerSide == 'White' || playerSide == 'white' || playerSide == 'W') {
     console.log(b.ascii());
     var firstMove = prompt("First move: ");
     b.move(firstMove);

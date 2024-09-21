@@ -28,42 +28,43 @@ class funcs {
                     s += curSquare;
                     s += curColor;
                     let posValC = piecePositionMap_1.PHMap.get(s);
+                    let positionalValMultiplier = 0.5;
                     if (posValC != null) {
                         if (curType == 'p' && curColor == 'b') {
-                            blackScore += posValC.p;
+                            blackScore += posValC.p * positionalValMultiplier;
                         }
                         if (curType == 'b' && curColor == 'b') {
-                            blackScore += posValC.b;
+                            blackScore += posValC.b * positionalValMultiplier;
                         }
                         if (curType == 'n' && curColor == 'b') {
-                            blackScore += posValC.n;
+                            blackScore += posValC.n * positionalValMultiplier;
                         }
                         if (curType == 'r' && curColor == 'b') {
-                            blackScore += posValC.r;
+                            blackScore += posValC.r * positionalValMultiplier;
                         }
                         if (curType == 'q' && curColor == 'b') {
-                            blackScore += posValC.q;
+                            blackScore += posValC.q * positionalValMultiplier;
                         }
                         if (curType == 'k' && curColor == 'b') {
-                            blackScore += posValC.k;
+                            blackScore += posValC.k * positionalValMultiplier;
                         }
                         if (curType == 'p' && curColor == 'w') {
-                            whiteScore += posValC.p;
+                            whiteScore += posValC.p * positionalValMultiplier;
                         }
                         if (curType == 'b' && curColor == 'w') {
-                            whiteScore += posValC.b;
+                            whiteScore += posValC.b * positionalValMultiplier;
                         }
                         if (curType == 'n' && curColor == 'w') {
-                            whiteScore += posValC.n;
+                            whiteScore += posValC.n * positionalValMultiplier;
                         }
                         if (curType == 'r' && curColor == 'w') {
-                            whiteScore += posValC.r;
+                            whiteScore += posValC.r * positionalValMultiplier;
                         }
                         if (curType == 'q' && curColor == 'w') {
-                            whiteScore += posValC.q;
+                            whiteScore += posValC.q * positionalValMultiplier;
                         }
                         if (curType == 'k' && curColor == 'w') {
-                            whiteScore += posValC.k;
+                            whiteScore += posValC.k * positionalValMultiplier;
                         }
                     }
                 }
