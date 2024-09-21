@@ -44,7 +44,7 @@ class node {
 
                 if(dic.has(this.curb) != true) {
                     this.children.push(new node(this.curb, this.pMoves[i], depth + 1, maxDepth, this))
-                    this.evals.push(this.children[i].evalsOptimal);
+                    this.evals.push(this.children[i].nodeEval);
                 } else {
                     let arr = dic.get(this.curb) ?? [];
                     this.evals.push(arr[i] ?? 0)
@@ -65,7 +65,6 @@ class node {
                 }
             }
             this.nodeEval = this.pickEval()
-            this.evalsOptimal = this.nodeEval;
         }
         
         this.curb.undo();
