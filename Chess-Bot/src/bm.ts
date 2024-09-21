@@ -90,7 +90,6 @@ export abstract class bm {
         } else {
             bestMove = pMoves[funcs.findMindex(pMovesEvals)];
         }
-        console.log("Positions searched: " + searches);
-        return bestMove;
+        return [bestMove, searches];
     }
 }

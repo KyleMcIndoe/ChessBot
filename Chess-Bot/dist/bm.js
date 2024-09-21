@@ -75,8 +75,7 @@ class bm {
         else {
             bestMove = pMoves[funcs_1.funcs.findMindex(pMovesEvals)];
         }
-        console.log("Positions searched: " + exports.searches);
-        return bestMove;
+        return [bestMove, exports.searches];
     }
 }
 exports.bm = bm;

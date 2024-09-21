@@ -8,7 +8,7 @@ const prompt = PromptSync();
 const b = new Chess();
 
 const playerSide = prompt("User side: ");
-const depth = parseInt(prompt("Depth: "));
+var depth = parseInt(prompt("Depth: "));
 
 if(playerSide == 'w' || playerSide == 'White' || playerSide == 'white' || playerSide == 'W') {
     console.log(b.ascii());
@@ -19,12 +19,18 @@ if(playerSide == 'w' || playerSide == 'White' || playerSide == 'white' || player
 
 while(b.isGameOver() == false) {
     var dateOne = new Date();
-    var computerBm = bm.findBest(b, depth);
+    var [computerBm, searches] = bm.findBest(b, depth);
     console.log(computerBm);
-    b.move(computerBm);
+    b.move(computerBm.toString());
     var dateTwo = new Date();
+    console.log("Current depth: " + depth)
+    console.log("Positions searched: " + searches);
     console.log(funcs.timeDiff(dateOne, dateTwo) + " ms");
     console.log(b.ascii());
+
+    if(parseInt(searches.toString()) > 1000000) depth--;
+    if(parseInt(searches.toString()) < 7500 && b.moveNumber() > 5) depth ++;
+
 
     var userMove = prompt("Your move: ");
     b.move(userMove);
