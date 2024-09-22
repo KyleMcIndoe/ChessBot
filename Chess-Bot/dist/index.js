@@ -29,7 +29,7 @@ while (b.isGameOver() == false) {
     console.log(b.ascii());
     if (parseInt(searches.toString()) > 1000000)
         depth--;
-    if (parseInt(searches.toString()) < 7500 && b.moveNumber() > 5)
+    if (parseInt(searches.toString()) < 5000 && b.moveNumber() > 5)
         depth++;
     var userMove = prompt("Your move: ");
     b.move(userMove);
