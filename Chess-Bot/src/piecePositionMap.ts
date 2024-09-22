@@ -26,12 +26,12 @@ export var PHMap = new Map<string, posVals>(); // position values hash map
 
 PHMap.set("a1w", new posVals(0.0, 1, 1, 1, 1, 1)); // pawn, knight, bishop, rook, queen, king
 PHMap.set("b1w", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("c1w", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("d1w", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("c1w", new posVals(0.0, 1, 1, 1, 1, 2));
+PHMap.set("d1w", new posVals(0.0, 1, 1, 1.5, 1, 1));
 PHMap.set("e1w", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("f1w", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("f1w", new posVals(0.0, 1, 1, 2, 1, 1));
 PHMap.set("g1w", new posVals(0.0, 1, 1, 1, 1, 3));
-PHMap.set("h1w", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("h1w", new posVals(0.0, 1, 1, 1, 1, 1.5));
 
 PHMap.set("a2w", new posVals(0.1, 1, 1, 1, 1, 1));
 PHMap.set("b2w", new posVals(0.1, 1, 1, 1, 1, 1));
@@ -165,9 +165,9 @@ PHMap.set("h7b", new posVals(0.1, 1, 1, 1, 1, 1));
 
 PHMap.set("a8b", new posVals(0.0, 1, 1, 1, 1, 1));
 PHMap.set("b8b", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("c8b", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("d8b", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("c8b", new posVals(0.0, 1, 1, 1, 1, 2));
+PHMap.set("d8b", new posVals(0.0, 1, 1, 1.5, 1, 1));
 PHMap.set("e8b", new posVals(0.0, 1, 1, 1, 1, 1));
-PHMap.set("f8b", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("f8b", new posVals(0.0, 1, 1, 2, 1, 1));
 PHMap.set("g8b", new posVals(0.0, 1, 1, 1, 1, 3));
-PHMap.set("h8b", new posVals(0.0, 1, 1, 1, 1, 1));
+PHMap.set("h8b", new posVals(0.0, 1, 1, 1, 1, 1.5));
