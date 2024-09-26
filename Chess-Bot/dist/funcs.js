@@ -130,6 +130,33 @@ class funcs {
         }
         return maxdex;
     }
+    static sortMoves(b, numTop) {
+        var moves = b.moves();
+        var top = [];
+        while (top.length != numTop) {
+            let opt = 0;
+            let optI = 0;
+            for (let i = 0; i < moves.length; i++) {
+                b.move(moves[i]);
+                let curEval = funcs.eval(b);
+                if (curEval >= opt && b.turn() == 'w') {
+                    opt = curEval;
+                    optI = i;
+                }
+                if (curEval <= opt && b.turn() == 'b') {
+                    opt = curEval;
+                    optI = i;
+                }
+                b.undo();
+            }
+            top.push(moves[optI]);
+            moves.splice(optI, 1);
+        }
+        for (let i = top.length; i < moves.length; i++) {
+            top.push(moves[i]);
+        }
+        return top;
+    }
     static materialBalance(b) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         const barr = b.board();

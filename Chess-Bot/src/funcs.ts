@@ -149,6 +149,39 @@ export abstract class funcs {
         return maxdex;
     }
 
+    public static sortMoves(b: Chess, numTop: number) {
+        var moves = b.moves();
+        var top: string[] = [];
+
+        while(top.length != numTop) {
+            let opt = 0;
+            let optI = 0;
+
+            for(let i = 0; i < moves.length; i++) {
+                b.move(moves[i]);
+                let curEval = funcs.eval(b);
+                if(curEval >= opt && b.turn() == 'w') {
+                    opt = curEval;
+                    optI = i;
+                }
+                if(curEval <= opt && b.turn() == 'b') {
+                    opt = curEval;
+                    optI = i;
+                }
+                b.undo();
+            }
+
+            top.push(moves[optI]);
+            moves.splice(optI, 1);
+        }
+
+        for(let i = top.length; i < moves.length; i++) {
+            top.push(moves[i]);
+        }
+
+        return top;
+    }
+
     public static materialBalance(b: Chess) {
         const barr = b.board();
         let blackMaterial: number = 0;
