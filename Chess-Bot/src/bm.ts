@@ -29,7 +29,7 @@ class node {
         this.curb = prevB;
         this.curb.move(move);
         this.turn = this.curb.turn();
-        this.pMoves = this.curb.moves();
+        this.pMoves = this.curb.moves().sort().reverse();
         this.parent = parent; 
 
         
