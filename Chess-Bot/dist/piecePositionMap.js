@@ -14,12 +14,12 @@ class posVals {
 exports.PHMap = new Map(); // position values hash map
 // White hashmap
 exports.PHMap.set("a1w", new posVals(0.0, 1, 1, 1, 1, 1)); // pawn, knight, bishop, rook, queen, king
-exports.PHMap.set("b1w", new posVals(0.0, 1, 1, 1, 1, 1));
+exports.PHMap.set("b1w", new posVals(0.0, 1, 1, -1, 1, 1));
 exports.PHMap.set("c1w", new posVals(0.0, 1, 1, 1, 1, 2));
 exports.PHMap.set("d1w", new posVals(0.0, 1, 1, 1.5, 1, 1));
 exports.PHMap.set("e1w", new posVals(0.0, 1, 1, 1, 1, 1));
 exports.PHMap.set("f1w", new posVals(0.0, 1, 1, 2, 1, 1));
-exports.PHMap.set("g1w", new posVals(0.0, 1, 1, 1, 1, 3));
+exports.PHMap.set("g1w", new posVals(0.0, 1, 1, -1, 1, 3));
 exports.PHMap.set("h1w", new posVals(0.0, 1, 1, 1, 1, 1.5));
 exports.PHMap.set("a2w", new posVals(0.1, 1, 1, 1, 1, 1));
 exports.PHMap.set("b2w", new posVals(0.1, 1, 1, 1, 1, 1));
@@ -35,11 +35,11 @@ exports.PHMap.set("c3w", new posVals(0.2, 2, 1, 1, 1, 1));
 exports.PHMap.set("d3w", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("e3w", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("f3w", new posVals(0.2, 2, 1, 1, 1, 1));
-exports.PHMap.set("g3w", new posVals(0.2, 1, 1, 1, 1, 1));
+exports.PHMap.set("g3w", new posVals(0.4, 1, 1, 1, 1, 1));
 exports.PHMap.set("h3w", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("a4w", new posVals(0.3, 1, 1, 1, 1, 1));
 exports.PHMap.set("b4w", new posVals(0.3, 1, 1, 1, 1, 1));
-exports.PHMap.set("c4w", new posVals(0.3, 1, 2, 1, 1, 1));
+exports.PHMap.set("c4w", new posVals(0.5, 1, 2, 1, 1, 1));
 exports.PHMap.set("d4w", new posVals(0.9, 1, 1, 1, 1, 1));
 exports.PHMap.set("e4w", new posVals(0.9, 1, 1, 1, 1, 1));
 exports.PHMap.set("f4w", new posVals(0.3, 1, 2, 1, 1, 1));
@@ -124,7 +124,7 @@ exports.PHMap.set("c6b", new posVals(0.2, 2, 1, 1, 1, 1));
 exports.PHMap.set("d6b", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("e6b", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("f6b", new posVals(0.2, 2, 1, 1, 1, 1));
-exports.PHMap.set("g6b", new posVals(0.2, 1, 1, 1, 1, 1));
+exports.PHMap.set("g6b", new posVals(0.4, 1, 1, 1, 1, 1));
 exports.PHMap.set("h6b", new posVals(0.2, 1, 1, 1, 1, 1));
 exports.PHMap.set("a7b", new posVals(0.1, 1, 1, 1, 1, 1));
 exports.PHMap.set("b7b", new posVals(0.1, 1, 1, 1, 1, 1));
@@ -135,11 +135,11 @@ exports.PHMap.set("f7b", new posVals(0.1, 1, 1, 1, 1, 1));
 exports.PHMap.set("g7b", new posVals(0.1, 1, 1, 1, 1, 1));
 exports.PHMap.set("h7b", new posVals(0.1, 1, 1, 1, 1, 1));
 exports.PHMap.set("a8b", new posVals(0.0, 1, 1, 1, 1, 1));
-exports.PHMap.set("b8b", new posVals(0.0, 1, 1, 1, 1, 1));
+exports.PHMap.set("b8b", new posVals(0.0, 1, 1, -1, 1, 1));
 exports.PHMap.set("c8b", new posVals(0.0, 1, 1, 1, 1, 2));
 exports.PHMap.set("d8b", new posVals(0.0, 1, 1, 1.5, 1, 1));
 exports.PHMap.set("e8b", new posVals(0.0, 1, 1, 1, 1, 1));
 exports.PHMap.set("f8b", new posVals(0.0, 1, 1, 2, 1, 1));
-exports.PHMap.set("g8b", new posVals(0.0, 1, 1, 1, 1, 3));
+exports.PHMap.set("g8b", new posVals(0.0, 1, 1, -1, 1, 3));
 exports.PHMap.set("h8b", new posVals(0.0, 1, 1, 1, 1, 1.5));
 //# sourceMappingURL=piecePositionMap.js.map
